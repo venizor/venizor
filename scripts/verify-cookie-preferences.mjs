@@ -251,7 +251,14 @@ try {
       throw new Error("Blocked storage");
     };
   });
-  await settings.click();
+  if (configured) {
+    // Closing preferences leaves expired consent unresolved and the banner visible.
+    await expect(page.locator(".cookie-banner")).toBeVisible();
+    await page.getByRole("button", { name: "Customize choices" }).click();
+  } else {
+    await settings.click();
+  }
+  await expect(dialog).toBeVisible();
   await page.getByRole("button", { name: "Reject optional" }).click();
   await expect(page.locator(".cookie-feedback[role=status]")).toContainText(
     "Your browser prevented saving",
