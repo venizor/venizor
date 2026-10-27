@@ -44,7 +44,7 @@ export default function TermsPage() {
       </p>
       <h2>Contact</h2>
       <p>
-        Questions about these website terms can be sent to info@venizor.com.
+        Questions about these website terms can be sent to connect@venizor.com.
         Contract-specific terms take precedence for an agreed engagement.
       </p>
     </LegalPage>

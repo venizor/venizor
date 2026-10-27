@@ -61,7 +61,7 @@ export default function PrivacyPage() {
       </p>
       <h2>Your choices and requests</h2>
       <p>
-        Contact info@venizor.com to ask about information you have sent, request
+        Contact connect@venizor.com to ask about information you have sent, request
         a correction or deletion, or withdraw consent for further optional
         communications. We may need to verify the request and retain records
         where required for an agreement or legal obligation. Clear your browser

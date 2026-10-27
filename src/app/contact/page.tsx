@@ -92,10 +92,10 @@ export default function ContactPage() {
                 </p>
                 <a
                   className="contact-email-link"
-                  href="mailto:info@venizor.com"
+                  href="mailto:connect@venizor.com"
                 >
                   <Mail size={18} />
-                  <span>info@venizor.com</span>
+                  <span>connect@venizor.com</span>
                   <ArrowUpRight size={17} />
                 </a>
               </Reveal>

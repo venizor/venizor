@@ -163,7 +163,7 @@ try {
   const mailto = await page
     .getByRole("link", { name: "Open in your email app" })
     .getAttribute("href");
-  assert.ok(mailto.startsWith("mailto:info@venizor.com?"));
+  assert.ok(mailto.startsWith("mailto:connect@venizor.com?"));
   assert.ok(decodeURIComponent(mailto).includes("Alex Test"));
   await page.screenshot({ path: "artifacts/enquiry.png" });
   await page.getByLabel("Your name", { exact: true }).fill("Alex Revised");

@@ -154,8 +154,8 @@ export function PageFooter() {
           </Link>
         </div>
         <div className="footer-connect">
-          <a href="mailto:info@venizor.com">
-            info@venizor.com <ArrowUpRight size={20} />
+          <a href="mailto:connect@venizor.com">
+            connect@venizor.com <ArrowUpRight size={20} />
           </a>
           <Link href="/contact" className="text-link">
             Discuss your project <ArrowUpRight size={18} />

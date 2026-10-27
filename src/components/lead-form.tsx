@@ -94,7 +94,7 @@ export function LeadForm({
     const service = String(data.get("service") || "");
     const message = String(data.get("message") || "").trim();
     if (!enabled) {
-      window.location.href = `mailto:info@venizor.com?subject=${encodeURIComponent(`Project enquiry: ${service}`)}&body=${encodeURIComponent(`${message}\n\nName: ${name}\nEmail: ${email}\nProject type: ${service}`)}`;
+      window.location.href = `mailto:connect@venizor.com?subject=${encodeURIComponent(`Project enquiry: ${service}`)}&body=${encodeURIComponent(`${message}\n\nName: ${name}\nEmail: ${email}\nProject type: ${service}`)}`;
       setFeedback(
         "Review and send this brief in your email app. Nothing has been submitted on this website.",
       );

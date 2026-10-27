@@ -57,8 +57,8 @@ export function PageError({ error, retry }: ErrorInfo) {
             ? "Reloading this page."
             : "If the problem continues, you can reach us by email."}
         </p>
-        <a className="page-recovery-email" href="mailto:info@venizor.com">
-          info@venizor.com
+        <a className="page-recovery-email" href="mailto:connect@venizor.com">
+          connect@venizor.com
         </a>
       </main>
       <footer className="page-recovery-footer">

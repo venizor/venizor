@@ -28,7 +28,7 @@ export function LegalPage({
             <h1 className="page-hero-title">{title}</h1>
             <p className="page-hero-lead">
               Last updated: 18 October 2026. Questions?{" "}
-              <Link href="mailto:info@venizor.com">info@venizor.com</Link>
+              <Link href="mailto:connect@venizor.com">connect@venizor.com</Link>
             </p>
           </section>
           <article className="legal-prose page-container">{children}</article>

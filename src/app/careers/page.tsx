@@ -24,7 +24,7 @@ export default function CareersPage() {
               of.
             </p>
             <Link
-              href="mailto:info@venizor.com?subject=Collaboration%20with%20VENIZOR"
+              href="mailto:connect@venizor.com?subject=Collaboration%20with%20VENIZOR"
               className="pill-button dark"
             >
               Introduce yourself <ArrowUpRight size={17} />

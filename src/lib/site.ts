@@ -1,7 +1,7 @@
 export const site = {
   name: "VENIZOR",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://venizor.com",
-  email: "info@venizor.com",
+  email: "connect@venizor.com",
   bookingUrl: process.env.NEXT_PUBLIC_CAL_LINK || "",
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "",
   legalName: process.env.NEXT_PUBLIC_BUSINESS_NAME || "",

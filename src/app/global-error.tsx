@@ -38,7 +38,7 @@ export default function GlobalError({ error, retry }: ErrorInfo) {
             Something interrupted this page.
           </h1>
           <p>
-            Please try again, or email info@venizor.com if the problem
+            Please try again, or email connect@venizor.com if the problem
             continues.
           </p>
           <div

@@ -87,7 +87,7 @@ export async function POST(request: Request) {
       return Response.json(
         {
           error:
-            "Online delivery is not available yet. Please email info@venizor.com directly.",
+            "Online delivery is not available yet. Please email connect@venizor.com directly.",
         },
         { status: 503 },
       );
@@ -195,7 +195,7 @@ export async function POST(request: Request) {
     return Response.json(
       {
         error:
-          "We could not confirm delivery. Please retry or email info@venizor.com.",
+          "We could not confirm delivery. Please retry or email connect@venizor.com.",
       },
       { status: 503 },
     );

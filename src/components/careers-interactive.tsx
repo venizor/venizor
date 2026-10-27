@@ -61,7 +61,7 @@ export function CareersFilterableList({ roles }: { roles: Role[] }) {
     );
 
     window.open(
-      `mailto:careers@venizor.com?subject=${subject}&body=${body}`,
+      `mailto:connect@venizor.com?subject=${subject}&body=${body}`,
       "_blank",
     );
     setApplicationSent(true);
@@ -214,7 +214,7 @@ export function CareersFilterableList({ roles }: { roles: Role[] }) {
                     <h4>Application Draft Initialized</h4>
                     <p>
                       Your application brief has been prepared for{" "}
-                      <strong>careers@venizor.com</strong>. We will review your
+                      <strong>connect@venizor.com</strong>. We will review your
                       technical profile and reply within 1 business day.
                     </p>
                     <button
