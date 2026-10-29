@@ -31,6 +31,16 @@ const geistSans = Geist({
 export const metadata: Metadata = {
   ...pageMetadata("/"),
   metadataBase: new URL(site.url),
+  applicationName: site.name,
+  icons: {
+    icon: [
+      { url: "/favicon-96x96.png", type: "image/png", sizes: "96x96" },
+      { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", type: "image/png", sizes: "180x180" },
+    ],
+  },
   title: {
     default: "Software, Web & AI Development Studio | VENIZOR",
     template: "%s | VENIZOR",

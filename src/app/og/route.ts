@@ -3,6 +3,11 @@ import { services } from "@/data/services";
 import { routeInfo } from "@/lib/site";
 import { ImageResponse } from "next/og";
 import { createElement as h } from "react";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
+
+const logo = await readFile(join(process.cwd(), "public/logo.png"));
+const logoSrc = `data:image/png;base64,${logo.toString("base64")}`;
 
 export async function GET(request: Request) {
   const path = new URL(request.url).searchParams.get("path") || "/";
@@ -32,15 +37,17 @@ export async function GET(request: Request) {
         {
           style: {
             display: "flex",
+            alignItems: "center",
             justifyContent: "space-between",
             fontSize: 24,
           },
         },
-        h(
-          "span",
-          { style: { fontWeight: 800, letterSpacing: "4px" } },
-          "VENIZOR",
-        ),
+        h("img", {
+          src: logoSrc,
+          width: 326,
+          height: 80,
+          alt: "VENIZOR — Innovate with confidence",
+        }),
         h(
           "span",
           { style: { color: "#2048ff" } },
@@ -71,7 +78,7 @@ export async function GET(request: Request) {
             color: "#545d6b",
           },
         },
-        h("span", {}, "Independent thinking. Connected possibilities."),
+        h("span", {}, "Innovate with confidence."),
         h("span", {}, "venizor.com"),
       ),
     ),

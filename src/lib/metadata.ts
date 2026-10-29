@@ -34,13 +34,21 @@ export function pageMetadata(
       siteName: site.name,
       locale: "en_IN",
       type: "website",
-      images: [{ url: image, width: 1200, height: 630, alt: heading }],
+      images: [
+        {
+          url: image,
+          width: 1200,
+          height: 630,
+          type: "image/png",
+          alt: `${site.name} — ${heading}`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: heading,
       description: summary,
-      images: [image],
+      images: [{ url: image, alt: `${site.name} — ${heading}` }],
     },
   };
 }
