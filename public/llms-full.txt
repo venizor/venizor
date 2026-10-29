@@ -2,6 +2,9 @@
 
 > Independent technology studio based in India. Websites, web applications, mobile apps, SaaS products and practical AI workflows.
 
+## Documentation
+- [Quick Index / llms.txt](https://venizor.com/llms.txt): Condensed summary index for fast model context retrieval.
+
 ## Services
 - [Website development](https://venizor.com/services/web-development): for businesses with something to say
 - [Web application development](https://venizor.com/services/web-applications): for startups and growing teams
@@ -57,3 +60,29 @@ Source: https://venizor.com/services/seo
 ### Answer engine optimization
 Answer engine optimization makes your business information easier for people and automated systems to understand. We help teams structure accurate service descriptions, useful answers and consistent entity details, supported by appropriate schema. This complements search fundamentals and original expertise; it cannot guarantee a citation, recommendation or placement in an AI answer.
 Source: https://venizor.com/services/answer-engine-optimization
+
+## Engineering Field Notes
+
+### Connecting Third-Party HTTPS Integrations
+Production playbook for idempotency, retry mechanisms, webhook queues, and circuit breakers. Patterns for storing cryptographic idempotency keys, decoupled Redis/BullMQ background queue processing, and preventing cascading gateway timeouts across payment and SaaS integrations.
+Source: https://venizor.com/blog/connecting-third-party-https-apis
+
+### Production-Ready AI Workflows
+Architectural guide to deploying robust LLM pipelines: Hybrid search pairing dense vector embeddings with BM25 sparse lexical search, semantic response caching, and automated cascading model fallbacks under latency spikes.
+Source: https://venizor.com/blog/integrating-production-ai-workflows
+
+### High-Scale PostgreSQL & Pooling
+Database scaling strategy: PgBouncer transaction pooling, composite B-tree and GiST indexing, connection budgeting under concurrency, and EXPLAIN ANALYZE query profiling.
+Source: https://venizor.com/blog/postgresql-at-scale-connection-pooling
+
+### Zero-Downtime DevOps & Releases
+Cloud delivery engineering: Docker multi-stage builds, Cloudflare Worker edge routing, zero-downtime rolling releases, and automated CI/CD validation.
+Source: https://venizor.com/blog/zero-downtime-deployments-devops-playbook
+
+### Hardening Full-Stack Web Security
+Comprehensive application security blueprint covering OWASP Top 10 mitigation, CSP header enforcement, cryptographic JWT verification, and zero-trust API boundaries.
+Source: https://venizor.com/blog/hardening-modern-web-applications-security
+
+### Mastering Modern Search: SEO, AEO, GEO & SXO
+Complete methodology for organic discoverability in 2026: Schema.org structured data graphs, agentic LLM context readiness (llms.txt, AI crawler directives), and search experience optimization.
+Source: https://venizor.com/blog/mastering-seo-aeo-geo-sxo-2026

@@ -1,4 +1,4 @@
-import type { BlogPost } from "@/data/blog-data";
+import { blogPosts, type BlogPost } from "@/data/blog-data";
 import { routeInfo, site } from "@/lib/site";
 
 export function JsonLd({ data }: { data: unknown }) {
@@ -22,6 +22,7 @@ export function GlobalJsonLd() {
             "@type": "Organization",
             "@id": site.url + "/#organization",
             name: site.name,
+            legalName: site.legalName || "VENIZOR Technologies",
             url: site.url,
             logo: {
               "@type": "ImageObject",
@@ -34,22 +35,31 @@ export function GlobalJsonLd() {
             email: site.email,
             description:
               "Independent software and AI studio building websites, web applications, mobile apps and SaaS products.",
-            ...(site.legalName ? { legalName: site.legalName } : {}),
-            ...(site.city
-              ? {
-                  address: {
-                    "@type": "PostalAddress",
-                    addressLocality: site.city,
-                    addressCountry: "IN",
-                  },
-                }
-              : {}),
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: site.city || "Bengaluru",
+              addressCountry: "IN",
+            },
+            sameAs: [
+              "https://github.com/venizor",
+              "https://linkedin.com/company/venizor",
+              "https://x.com/venizor",
+            ],
           },
           {
             "@type": "WebSite",
             "@id": site.url + "/#website",
             name: site.name,
             url: site.url,
+            publisher: { "@id": site.url + "/#organization" },
+            potentialAction: {
+              "@type": "SearchAction",
+              target: {
+                "@type": "EntryPoint",
+                urlTemplate: `${site.url}/blog?q={search_term_string}`,
+              },
+              "query-input": "required name=search_term_string",
+            },
           },
         ],
       }}
@@ -95,6 +105,10 @@ export function BreadcrumbJsonLd({
 }
 
 export function ArticleJsonLd({ post }: { post: BlogPost }) {
+  const isPerson =
+    !post.author.name.toLowerCase().includes("group") &&
+    !post.author.name.toLowerCase().includes("studio");
+
   return (
     <>
       <BreadcrumbJsonLd
@@ -112,11 +126,19 @@ export function ArticleJsonLd({ post }: { post: BlogPost }) {
           dateModified: new Date(
             post.modifiedDate || post.publishDate,
           ).toISOString(),
-          author: {
-            "@type": "Organization",
-            name: post.author.name,
-            url: site.url + "/about",
-          },
+          author: isPerson
+            ? {
+                "@type": "Person",
+                name: post.author.name,
+                jobTitle: post.author.role,
+                url: site.url + "/about",
+                worksFor: { "@id": site.url + "/#organization" },
+              }
+            : {
+                "@type": "Organization",
+                name: post.author.name,
+                url: site.url + "/about",
+              },
           publisher: { "@id": site.url + "/#organization" },
           mainEntityOfPage: site.url + `/blog/${post.slug}`,
           image: `${site.url}/og?path=${encodeURIComponent(`/blog/${post.slug}`)}`,
@@ -137,6 +159,39 @@ export function FaqJsonLd({ faqs }: { faqs: { q: string; a: string }[] }) {
           "@type": "Question",
           name: q,
           acceptedAnswer: { "@type": "Answer", text: a },
+        })),
+      }}
+    />
+  );
+}
+
+export function BlogJsonLd({ posts }: { posts?: BlogPost[] }) {
+  const items = posts || blogPosts;
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "@id": `${site.url}/blog/#blog`,
+        name: "Field Notes & Engineering Architecture Blog | VENIZOR",
+        description:
+          "Production field notes on distributed systems, applied AI, database scaling, API resilience, and zero-downtime operations.",
+        url: `${site.url}/blog`,
+        publisher: { "@id": `${site.url}/#organization` },
+        blogPost: items.map((post) => ({
+          "@type": "BlogPosting",
+          headline: post.title,
+          description: post.excerpt,
+          url: `${site.url}/blog/${post.slug}`,
+          datePublished: new Date(post.publishDate).toISOString(),
+          dateModified: new Date(
+            post.modifiedDate || post.publishDate,
+          ).toISOString(),
+          author: {
+            "@type": "Organization",
+            name: post.author.name,
+            url: `${site.url}/about`,
+          },
         })),
       }}
     />

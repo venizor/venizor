@@ -4,13 +4,14 @@ export const site = {
   email: "connect@venizor.com",
   bookingUrl: process.env.NEXT_PUBLIC_CAL_LINK || "",
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "",
-  legalName: process.env.NEXT_PUBLIC_BUSINESS_NAME || "",
-  city: process.env.NEXT_PUBLIC_BUSINESS_CITY || "",
+  legalName: process.env.NEXT_PUBLIC_BUSINESS_NAME || "VENIZOR Technologies",
+  city: process.env.NEXT_PUBLIC_BUSINESS_CITY || "Bengaluru",
 };
 
 export const isIndexable =
   process.env.VERCEL_ENV === "production" ||
-  (!process.env.VERCEL_ENV && process.env.SITE_INDEXABLE === "true");
+  process.env.NODE_ENV === "development" ||
+  (process.env.VERCEL_ENV !== "preview" && process.env.SITE_INDEXABLE !== "false");
 
 export const routeInfo: Record<
   string,

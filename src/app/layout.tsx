@@ -70,6 +70,40 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       className={`${geistSans.variable} h-full antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        <link
+          rel="alternate"
+          type="text/plain"
+          href="/llms.txt"
+          title="LLM Context"
+        />
+        <script
+          type="speculationrules"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              prerender: [
+                {
+                  source: "list",
+                  urls: ["/services", "/about", "/contact", "/blog"],
+                  eagerness: "moderate",
+                },
+              ],
+              prefetch: [
+                {
+                  source: "document",
+                  where: {
+                    and: [
+                      { href_matches: "/*" },
+                      { not: { href_matches: "/api/*" } },
+                    ],
+                  },
+                  eagerness: "conservative",
+                },
+              ],
+            }),
+          }}
+        />
+      </head>
       <body suppressHydrationWarning>
         <GlobalJsonLd />
         <OptionalFeatureBoundary feature="smooth-scrolling">

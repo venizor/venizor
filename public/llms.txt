@@ -2,6 +2,9 @@
 
 > Independent technology studio based in India. Websites, web applications, mobile apps, SaaS products and practical AI workflows.
 
+## Documentation
+- [Full LLM Context & Detailed Specs](https://venizor.com/llms-full.txt): Complete service breakdowns, technical architecture, and implementation details.
+
 ## Services
 - [Website development](https://venizor.com/services/web-development): for businesses with something to say
 - [Web application development](https://venizor.com/services/web-applications): for startups and growing teams
@@ -20,6 +23,14 @@
 - [Scope wizard](https://venizor.com/scope)
 - [Pipeline simulator](https://venizor.com/simulator)
 - [Privacy](https://venizor.com/privacy)
+
+## Engineering Field Notes
+- [Connecting Third-Party HTTPS Integrations](https://venizor.com/blog/connecting-third-party-https-apis): Production playbook for idempotency, retry mechanisms, webhook queues, and circuit breakers.
+- [Production-Ready AI Workflows](https://venizor.com/blog/integrating-production-ai-workflows): Hybrid search with pgvector, BM25, semantic cache, and model cascading fallbacks.
+- [High-Scale PostgreSQL & Pooling](https://venizor.com/blog/postgresql-at-scale-connection-pooling): PgBouncer pooling, index strategies, and query profiling under load.
+- [Zero-Downtime DevOps & Releases](https://venizor.com/blog/zero-downtime-deployments-devops-playbook): Edge deployments, containerized rollouts, and automated CI/CD pipelines.
+- [Hardening Full-Stack Web Security](https://venizor.com/blog/hardening-modern-web-applications-security): Defense-in-depth from OWASP Top 10 to Zero-Trust API protection.
+- [Mastering Modern Search: SEO, AEO, GEO & SXO](https://venizor.com/blog/mastering-seo-aeo-geo-sxo-2026): Generative Engine Optimization, structured data, and search experience optimization.
 
 ## Content context
 Architecture scenarios, product concepts and simulator outputs are illustrative. They are not verified client engagements or production performance benchmarks. Timelines, costs and service commitments are agreed per project.
